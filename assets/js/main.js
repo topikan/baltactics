@@ -54,19 +54,19 @@
     root.setAttribute('data-theme', next);
     try { localStorage.setItem('bt-theme', next); } catch (e) {}
     var m = $('meta[name="theme-color"]'); if (m) m.content = next === 'dark' ? '#0e0e0c' : '#f4f3ee';
-    var b = $('#themeToggle'); b.innerHTML = b.innerHTML; // перезапуск анимации иконки
+    var b = $('#themeToggle'); b.innerHTML = b.innerHTML;
   });
 
   /* ---------- Оверлеи (модалки, шторки) ---------- */
   var backdrop = $('#backdrop'), openEl = null;
   function open(el) {
     if (openEl) close();
-    openEl = el; el.classList.add('is-open'); backdrop.classList.add('is-open'); document.body.classList.add('lock');
+    openEl = el; el.classList.add('is-open'); backdrop.classList.add('is-open'); root.classList.add('lock');
     var f = el.querySelector('input'); if (f && el.id === 'searchModal') setTimeout(function () { f.focus(); }, 80);
   }
   function close() {
     if (!openEl) return;
-    openEl.classList.remove('is-open'); backdrop.classList.remove('is-open'); document.body.classList.remove('lock');
+    openEl.classList.remove('is-open'); backdrop.classList.remove('is-open'); root.classList.remove('lock');
     if (openEl.id === 'videoModal') $('#videoImg').removeAttribute('src');
     openEl = null;
   }
@@ -81,7 +81,6 @@
 
   $('#accountOpen').addEventListener('click', function () { open($('#accountModal')); });
   $('#cartOpen').addEventListener('click', function () { renderCart(); open($('#cartDrawer')); });
-  $('#favOpen').addEventListener('click', function () { renderFav(); open($('#favDrawer')); });
   $('#burger').addEventListener('click', function () { open($('#mobileMenu')); });
   $$('#mobileMenu a').forEach(function (a) { a.addEventListener('click', close); });
   $('#searchOpen').addEventListener('click', function () { open($('#searchModal')); });
@@ -127,16 +126,15 @@
     slides.forEach(function (s, i) { s.classList.toggle('is-active', i === cur); });
     bgImg.classList.add('is-fading');
     setTimeout(function () {
-      bgImg.style.backgroundImage = 'url("' + slides[cur].dataset.bg + '")';
-      bgImg.classList.toggle('is-fit', slides[cur].hasAttribute('data-fit'));
+      setBg(slides[cur]);
       bgImg.classList.remove('is-fading');
     }, 350);
     $('#slideNow').textContent = String(cur + 1).padStart(2, '0');
     prog.classList.remove('run'); void prog.offsetWidth; prog.classList.add('run');
     clearInterval(timer); timer = setInterval(function () { go(cur + 1); }, 6500);
   }
-  bgImg.style.backgroundImage = 'url("' + slides[0].dataset.bg + '")';
-  bgImg.classList.toggle('is-fit', slides[0].hasAttribute('data-fit'));
+  function setBg(sl) { bgImg.style.backgroundImage = 'url("' + sl.dataset.bg + '")'; bgImg.style.backgroundPosition = sl.dataset.pos || 'center'; }
+  setBg(slides[0]);
   $('#slideNext').addEventListener('click', function () { go(cur + 1); });
   $('#slidePrev').addEventListener('click', function () { go(cur - 1); });
   var tx = null, hero = $('#hero');
@@ -149,7 +147,7 @@
 
   /* ---------- Товары + вкладки ---------- */
   var grid = $('#productGrid'), activeTab = 'all', expanded = false;
-  var fav = store.get('bt-fav', []), cart = store.get('bt-cart', {});
+  var cart = store.get('bt-cart', {});
 
   function card(p, i) {
     var sw = (p.colors || []).map(function (c) { return '<span class="swatch" title="' + c + '" style="background:' + (COLORS[c] || '#777') + '"></span>'; }).join('');
@@ -159,7 +157,6 @@
       : '<a class="add-btn" href="https://wa.me/79951138708?text=' + encodeURIComponent('Здравствуйте! Интересует: ' + p.title) + '" target="_blank" rel="noopener">Узнать цену</a>';
     return '<article class="product" style="animation-delay:' + (i * 40) + 'ms">' +
       '<div class="product__media">' + (p.tag ? '<span class="product__tag">' + p.tag + '</span>' : '') +
-      '<button class="product__fav' + (fav.indexOf(p.id) > -1 ? ' is-on' : '') + '" data-fav="' + p.id + '" aria-label="В избранное"><svg class="i"><use href="#i-heart"/></svg></button>' +
       imgTag(p, p.cover ? 'is-cover' : '') + '</div>' +
       '<div class="product__body"><h3 class="product__title">' + esc(p.title) + '</h3>' +
       '<p class="product__meta">' + esc(p.meta || '') + '</p>' + (sw ? '<div class="swatches">' + sw + '</div>' : '') +
@@ -182,25 +179,6 @@
     if (a.getAttribute('href') === '#catalog') a.setAttribute('href', '#products');
   });
   $('#showMore').addEventListener('click', function () { expanded = true; renderGrid(); });
-
-  /* ---------- Избранное ---------- */
-  function updateFavBadge() { var b = $('#favCount'); b.textContent = fav.length; b.classList.toggle('is-on', fav.length > 0); }
-  function toggleFav(id) {
-    var i = fav.indexOf(id);
-    if (i > -1) { fav.splice(i, 1); toast('Удалено из избранного'); } else { fav.push(id); toast('Добавлено в избранное'); }
-    store.set('bt-fav', fav); updateFavBadge();
-    $$('[data-fav="' + id + '"]').forEach(function (b) { b.classList.toggle('is-on', fav.indexOf(id) > -1); });
-  }
-  function renderFav() {
-    var box = $('#favItems');
-    if (!fav.length) { box.innerHTML = '<div class="empty"><svg class="i"><use href="#i-heart"/></svg>В избранном пока пусто</div>'; return; }
-    box.innerHTML = fav.map(function (id) {
-      var p = byId[id]; if (!p) return '';
-      return '<div class="line-item">' + imgTag(p) + '<div><div class="line-item__title">' + esc(p.title) + '</div><div class="line-item__price">' + (p.price ? fmt(p.price) : 'Цена по запросу') + '</div>' +
-        '<button class="remove" data-fav="' + id + '">Убрать</button></div>' +
-        (p.price ? '<button class="icon-btn" data-add="' + id + '" aria-label="В корзину"><svg class="i"><use href="#i-cart"/></svg></button>' : '') + '</div>';
-    }).join('');
-  }
 
   /* ---------- Корзина ---------- */
   function cartQty() { return Object.keys(cart).reduce(function (s, k) { return s + cart[k]; }, 0); }
@@ -232,10 +210,9 @@
 
   /* Делегирование кликов */
   document.addEventListener('click', function (e) {
-    var t = e.target.closest('[data-add],[data-fav],[data-inc],[data-dec],[data-rm]'); if (!t) return;
+    var t = e.target.closest('[data-add],[data-inc],[data-dec],[data-rm]'); if (!t) return;
     var d = t.dataset;
     if (d.add) { addToCart(d.add); if (openEl && openEl.id === 'cartDrawer') renderCart(); }
-    else if (d.fav) { toggleFav(d.fav); if (openEl && openEl.id === 'favDrawer') renderFav(); }
     else if (d.inc) { cart[d.inc]++; saveCart(); renderCart(); }
     else if (d.dec) { if (--cart[d.dec] <= 0) delete cart[d.dec]; saveCart(); renderCart(); renderGrid(); }
     else if (d.rm) { delete cart[d.rm]; saveCart(); renderCart(); renderGrid(); }
@@ -277,5 +254,5 @@
 
   /* ---------- Init ---------- */
   $('#year').textContent = new Date().getFullYear();
-  renderGrid(); updateFavBadge(); updateCartBadge(false);
+  renderGrid(); updateCartBadge(false);
 })();
