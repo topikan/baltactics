@@ -1,0 +1,36 @@
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="index.html" class="logo" aria-label="БалТактика — на главную">
+      <svg class="logo__mark" role="img" aria-hidden="true"><use href="#i-logo"/></svg>
+    </a>
+
+    <nav class="nav" aria-label="Основное меню">
+      <a href="index.html" class="nav__link" data-nav="home">Главная</a>
+      <div class="nav__item">
+        <a href="catalog.html" class="nav__link" data-nav="catalog" aria-haspopup="true">Магазин <svg class="i i--sm"><use href="#i-chevron"/></svg></a>
+        <div class="dropdown" role="menu">
+          <a href="catalog.html#vests" role="menuitem">Бронежилеты и бронепанели</a>
+          <a href="catalog.html#concealed" role="menuitem">Скрытое ношение</a>
+          <a href="catalog.html#insoles" role="menuitem">Кевларовые стельки</a>
+          <a href="catalog.html#other" role="menuitem">Ткани и аксессуары</a>
+          <a href="catalog.html" role="menuitem" class="dropdown__all">Весь каталог →</a>
+        </div>
+      </div>
+      <a href="index.html#coop" class="nav__link">Сотрудничество</a>
+      <a href="index.html#docs" class="nav__link">Документы</a>
+      <a href="index.html#about" class="nav__link">О нас</a>
+      <a href="index.html#contacts" class="nav__link">Контакты</a>
+    </nav>
+
+    <div class="header__actions">
+      <button class="icon-btn" data-open="searchModal" aria-label="Поиск по каталогу" title="Поиск (Ctrl+K)"><svg class="i"><use href="#i-search"/></svg></button>
+      <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Сменить тему" title="Тёмная / светлая тема">
+        <svg class="i theme-toggle__moon"><use href="#i-moon"/></svg>
+        <svg class="i theme-toggle__sun"><use href="#i-sun"/></svg>
+      </button>
+      <button class="login-btn" data-open="accountModal"><svg class="i"><use href="#i-user"/></svg><span>Войти</span></button>
+      <button class="icon-btn" id="cartOpen" title="Корзина"><span class="sr-only">Корзина, товаров:</span><svg class="i"><use href="#i-cart"/></svg><span class="badge" id="cartCount">0</span></button>
+      <button class="icon-btn burger" data-open="mobileMenu" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>

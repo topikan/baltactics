@@ -6,5 +6,10 @@
 
 Каталог, личный кабинет и оформление заказа пока работают как заглушки.
 
+## Структура
+- `index.html`, `catalog.html` — собираются из частей в `src/` командой `python3 tools/build.py`
+- `assets/js/main.js` — каталог (данные с baltactics.ru), корзина, заказ через WhatsApp/e-mail, поиск, тема
+- `assets/img/products/` — фото товаров с baltactics.ru
+
 ## Запуск
 Откройте `index.html` в браузере или включите GitHub Pages: Settings → Pages → Deploy from a branch → `main` / `(root)`.

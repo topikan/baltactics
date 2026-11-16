@@ -1,0 +1,104 @@
+<div class="backdrop" id="backdrop"></div>
+
+<!-- Корзина -->
+<aside class="drawer" id="cartDrawer" aria-label="Корзина">
+  <div class="drawer__head"><h3 class="h4">Корзина</h3><button class="icon-btn" data-close aria-label="Закрыть"><svg class="i"><use href="#i-x"/></svg></button></div>
+  <div class="drawer__body" id="cartItems"></div>
+  <div class="drawer__foot">
+    <div class="drawer__total"><span>Итого</span><b id="cartTotal">0 ₽</b></div>
+    <button class="btn btn--primary btn--block" id="checkout">Оформить заказ <svg class="i"><use href="#i-arrow"/></svg></button>
+  </div>
+</aside>
+
+<!-- Мобильное меню -->
+<aside class="drawer drawer--left" id="mobileMenu" aria-label="Меню">
+  <div class="drawer__head"><a href="index.html" class="logo"><svg class="logo__mark" aria-hidden="true"><use href="#i-logo"/></svg></a><button class="icon-btn" data-close aria-label="Закрыть"><svg class="i"><use href="#i-x"/></svg></button></div>
+  <nav class="drawer__body mnav">
+    <a href="index.html">Главная</a><a href="catalog.html">Магазин</a><a href="index.html#coop">Сотрудничество</a><a href="index.html#docs">Документы</a><a href="index.html#about">О нас</a><a href="index.html#contacts">Контакты</a>
+  </nav>
+  <div class="drawer__foot"><button class="btn btn--ghost btn--block" data-open="accountModal">Войти</button><a href="tel:+79854928708" class="btn btn--primary btn--block">+7 (985) 492-87-08</a></div>
+</aside>
+
+<!-- Вход -->
+<div class="modal" id="accountModal" role="dialog" aria-modal="true" aria-label="Личный кабинет">
+  <div class="modal__box">
+    <button class="icon-btn modal__close" data-close aria-label="Закрыть"><svg class="i"><use href="#i-x"/></svg></button>
+    <svg class="modal__logo" aria-hidden="true"><use href="#i-logo"/></svg>
+    <div class="seg" role="tablist">
+      <button class="seg__btn is-active" data-auth="login">Вход</button>
+      <button class="seg__btn" data-auth="register">Регистрация</button>
+    </div>
+    <form class="auth" data-pane="login" novalidate>
+      <label class="field"><span>E-mail или телефон</span><input type="text" required autocomplete="username" maxlength="120"></label>
+      <label class="field"><span>Пароль</span><input type="password" required autocomplete="current-password" maxlength="128"></label>
+      <button class="btn btn--primary btn--block" type="submit">Войти</button>
+    </form>
+    <form class="auth" data-pane="register" hidden novalidate>
+      <label class="field"><span>Имя</span><input type="text" required autocomplete="name" maxlength="80"></label>
+      <label class="field"><span>E-mail</span><input type="email" required autocomplete="email" maxlength="120"></label>
+      <label class="field"><span>Пароль</span><input type="password" required autocomplete="new-password" maxlength="128"></label>
+      <button class="btn btn--primary btn--block" type="submit">Создать аккаунт</button>
+    </form>
+    <p class="muted modal__note">Демо-версия: личный кабинет подключается вместе с бэкендом. Данные никуда не отправляются.</p>
+  </div>
+</div>
+
+<!-- Поиск -->
+<div class="modal modal--top" id="searchModal" role="dialog" aria-modal="true" aria-label="Поиск">
+  <div class="modal__box modal__box--wide">
+    <div class="search-field">
+      <svg class="i"><use href="#i-search"/></svg>
+      <input type="search" id="searchInput" placeholder="Например: стельки, Невидимка, бронепанель" autocomplete="off" maxlength="60">
+      <button class="icon-btn" data-close aria-label="Закрыть"><svg class="i"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<!-- Карточка товара -->
+<div class="modal" id="optModal" role="dialog" aria-modal="true" aria-label="Товар">
+  <div class="modal__box modal__box--product">
+    <button class="icon-btn modal__close" data-close aria-label="Закрыть"><svg class="i"><use href="#i-x"/></svg></button>
+    <div id="optBody"></div>
+  </div>
+</div>
+
+<!-- Оформление заказа -->
+<div class="modal" id="orderModal" role="dialog" aria-modal="true" aria-label="Оформление заказа">
+  <div class="modal__box">
+    <button class="icon-btn modal__close" data-close aria-label="Закрыть"><svg class="i"><use href="#i-x"/></svg></button>
+    <h3 class="h4">Оформление заказа</h3>
+    <div class="order-sum" id="orderSum"></div>
+    <form id="orderForm" class="auth" novalidate>
+      <label class="field"><span>Имя</span><input type="text" name="name" required autocomplete="name" maxlength="80"></label>
+      <label class="field"><span>Телефон</span><input type="tel" name="phone" required autocomplete="tel" maxlength="30" placeholder="+7"></label>
+      <label class="field"><span>Город и способ доставки</span><input type="text" name="addr" maxlength="200" placeholder="Например: Казань, СДЭК"></label>
+      <label class="field"><span>Комментарий</span><textarea name="msg" rows="2" maxlength="500"></textarea></label>
+      <label class="check"><input type="checkbox" required> <span>Согласен на обработку персональных данных</span></label>
+      <div class="order-send">
+        <button class="btn btn--primary" type="submit" data-via="wa">Отправить в WhatsApp</button>
+        <button class="btn btn--ghost" type="submit" data-via="mail">На e-mail</button>
+      </div>
+      <p class="muted modal__note">Заказ уйдёт менеджеру готовым сообщением — останется нажать «Отправить».</p>
+    </form>
+  </div>
+</div>
+
+<!-- Документы -->
+<div class="modal" id="privacyModal" role="dialog" aria-modal="true" aria-label="Политика конфиденциальности">
+  <div class="modal__box">
+    <button class="icon-btn modal__close" data-close aria-label="Закрыть"><svg class="i"><use href="#i-x"/></svg></button>
+    <h3 class="h4">Политика конфиденциальности</h3>
+    <p class="muted">Здесь будет полный текст политики обработки персональных данных (152-ФЗ) с реквизитами оператора. Текст предоставляет владелец сайта.</p>
+    <p class="muted">Демо-версия сайта не хранит и не передаёт введённые данные: формы готовят сообщение, которое вы отправляете сами.</p>
+  </div>
+</div>
+<div class="modal" id="termsModal" role="dialog" aria-modal="true" aria-label="Условия использования">
+  <div class="modal__box">
+    <button class="icon-btn modal__close" data-close aria-label="Закрыть"><svg class="i"><use href="#i-x"/></svg></button>
+    <h3 class="h4">Условия использования</h3>
+    <p class="muted">Здесь будут условия продажи, доставки, оплаты и возврата. Текст предоставляет владелец сайта.</p>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
