@@ -27,8 +27,8 @@
     { id: 'ins-34', cat: 'insoles', title: 'Кевларовые стельки 3,4 мм', price: 1900, img: IMG + 'kevlar_insoles_5.webp', colors: ['Милитари'], meta: 'Толщина 3,4 мм · размеры 40–46' },
     { id: 'bogatyr', cat: 'concealed', title: 'Жилет скрытого ношения «Русский Богатырь»', price: 0, img: IMG + 'concealed_carry_vest_russky_bogatyr_1_0.webp', colors: C3, meta: 'Размеры: ' + S3, tag: 'Новинка' },
     { id: 'vest-line', cat: 'vests', title: 'Линейка жилетов', price: 0, img: IMG + 'vest_1_0.webp', colors: C3, meta: 'Размеры: ' + S3 },
-    { id: 'jacket', cat: 'other', title: 'Куртка «Броне»', price: 0, img: 'assets/img/cat-pouches.jpg', cover: true, meta: 'Размеры: ' + S3 },
-    { id: 'blanket', cat: 'other', title: 'Противоосколочное одеяло', price: 0, img: 'assets/img/cat-vest.jpg', cover: true, colors: ['Чёрный'], meta: 'Односпальное, полуторное, двуспальное' }
+    { id: 'jacket', cat: 'other', title: 'Куртка «Броне»', price: 0, img: 'assets/img/placeholder.svg', cover: true, meta: 'Размеры: ' + S3 },
+    { id: 'blanket', cat: 'other', title: 'Противоосколочное одеяло', price: 0, img: 'assets/img/placeholder.svg', cover: true, colors: ['Чёрный'], meta: 'Односпальное, полуторное, двуспальное' }
   ];
   var byId = {}; PRODUCTS.forEach(function (p) { byId[p.id] = p; });
 
