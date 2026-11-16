@@ -16,19 +16,20 @@
   var COLORS = { 'Чёрный': '#1b1b18', 'Олива': '#5d5f3a', 'Песочный': '#c8b48a', 'Милитари': '#6b6b45' };
   var C3 = ['Чёрный', 'Олива', 'Песочный'];
   var S3 = '46–50, 50–54, 54–56';
+  var SZ3 = ['46–50', '50–54', '54–56'];
   var PRODUCTS = [
-    { id: 'zaschitnik', cat: 'vests', title: 'Бронежилет «Защитник»', price: 19000, img: IMG + 'bulletproof_vest_zaschitnik_1_0.webp', colors: C3, meta: 'Размеры: ' + S3, tag: 'Хит' },
-    { id: 'cc-vest', cat: 'concealed', title: 'Жилет скрытого ношения', price: 23500, img: IMG + 'concealed_carry_vest_2_0.webp', colors: C3, meta: 'Полиэстер · ' + S3 },
-    { id: 'cc-shirt', cat: 'concealed', title: 'Майка скрытого ношения', price: 11500, img: IMG + 'concealed_carry_vest_1_0.webp', colors: C3, meta: 'Полиэстер, вискоза, нейлон, спандекс' },
-    { id: 'nevidimka', cat: 'concealed', title: 'Жилет скрытого ношения «Невидимка»', price: 12000, img: IMG + 'concealed_carry_vest_nevidimka_1_0.webp', colors: C3, meta: 'Размеры: ' + S3 },
-    { id: 'plate', cat: 'vests', title: 'Бронепанель', price: 14000, img: 'assets/img/cat-plates.jpg', cover: true, colors: C3, meta: 'Размеры: ' + S3 },
+    { id: 'zaschitnik', cat: 'vests', title: 'Бронежилет «Защитник»', price: 19000, img: IMG + 'bulletproof_vest_zaschitnik_1_0.webp', colors: C3, meta: 'Размеры: ' + S3, tag: 'Хит' , sizes: SZ3 },
+    { id: 'cc-vest', cat: 'concealed', title: 'Жилет скрытого ношения', price: 23500, img: IMG + 'concealed_carry_vest_2_0.webp', colors: C3, meta: 'Полиэстер · ' + S3 , sizes: SZ3 },
+    { id: 'cc-shirt', cat: 'concealed', title: 'Майка скрытого ношения', price: 11500, img: IMG + 'concealed_carry_vest_1_0.webp', colors: C3, meta: 'Полиэстер, вискоза, нейлон, спандекс' , sizes: SZ3 },
+    { id: 'nevidimka', cat: 'concealed', title: 'Жилет скрытого ношения «Невидимка»', price: 12000, img: IMG + 'concealed_carry_vest_nevidimka_1_0.webp', colors: C3, meta: 'Размеры: ' + S3 , sizes: SZ3 },
+    { id: 'plate', cat: 'vests', title: 'Бронепанель', price: 14000, img: 'assets/img/cat-plates.jpg', cover: true, colors: C3, meta: 'Размеры: ' + S3 , sizes: SZ3 },
     { id: 'ins-c2', cat: 'insoles', title: 'Кевларовые стельки, класс C2', price: 2500, img: IMG + 'kevlar_insoles_3.webp', meta: 'Противоосколочные · спецполимер', tag: 'C2' },
     { id: 'ins-anti', cat: 'insoles', title: 'Кевларовые стельки антипрокольные', price: 3000, img: IMG + 'kevlar_insoles_6.webp', meta: 'Противоосколочные · спецполимер' },
-    { id: 'ins-34', cat: 'insoles', title: 'Кевларовые стельки 3,4 мм', price: 1900, img: IMG + 'kevlar_insoles_5.webp', colors: ['Милитари'], meta: 'Толщина 3,4 мм · размеры 40–46' },
-    { id: 'bogatyr', cat: 'concealed', title: 'Жилет скрытого ношения «Русский Богатырь»', price: 0, img: IMG + 'concealed_carry_vest_russky_bogatyr_1_0.webp', colors: C3, meta: 'Размеры: ' + S3, tag: 'Новинка' },
-    { id: 'vest-line', cat: 'vests', title: 'Линейка жилетов', price: 0, img: IMG + 'vest_1_0.webp', colors: C3, meta: 'Размеры: ' + S3 },
-    { id: 'jacket', cat: 'other', title: 'Куртка «Броне»', price: 0, img: 'assets/img/placeholder.svg', cover: true, meta: 'Размеры: ' + S3 },
-    { id: 'blanket', cat: 'other', title: 'Противоосколочное одеяло', price: 0, img: 'assets/img/placeholder.svg', cover: true, colors: ['Чёрный'], meta: 'Односпальное, полуторное, двуспальное' }
+    { id: 'ins-34', cat: 'insoles', title: 'Кевларовые стельки 3,4 мм', price: 1900, img: IMG + 'kevlar_insoles_5.webp', colors: ['Милитари'], meta: 'Толщина 3,4 мм · размеры 40–46' , sizes: ['40', '41', '42', '43', '44', '45', '46'] },
+    { id: 'bogatyr', cat: 'concealed', title: 'Жилет скрытого ношения «Русский Богатырь»', price: 0, img: IMG + 'concealed_carry_vest_russky_bogatyr_1_0.webp', colors: C3, meta: 'Размеры: ' + S3, tag: 'Новинка' , sizes: SZ3 },
+    { id: 'vest-line', cat: 'vests', title: 'Линейка жилетов', price: 0, img: IMG + 'vest_1_0.webp', colors: C3, meta: 'Размеры: ' + S3 , sizes: SZ3 },
+    { id: 'jacket', cat: 'other', title: 'Куртка «Броне»', price: 0, img: 'assets/img/placeholder.svg', cover: true, meta: 'Размеры: ' + S3 , sizes: SZ3 },
+    { id: 'blanket', cat: 'other', title: 'Противоосколочное одеяло', price: 0, img: 'assets/img/placeholder.svg', cover: true, colors: ['Чёрный'], meta: 'Односпальное, полуторное, двуспальное' , sizes: ['Односпальное', 'Полуторное', 'Двуспальное'] }
   ];
   var byId = {}; PRODUCTS.forEach(function (p) { byId[p.id] = p; });
 
@@ -147,13 +148,15 @@
 
   /* ---------- Товары + вкладки ---------- */
   var grid = $('#productGrid'), activeTab = 'all', expanded = false;
-  var cart = store.get('bt-cart', {});
+  var cart = store.get('bt-cart2', {});
+  function inCart(id) { return Object.keys(cart).some(function (k) { return k.split('|')[0] === id; }); }
+  function needsOptions(p) { return (p.colors && p.colors.length > 1) || (p.sizes && p.sizes.length > 1); }
 
   function card(p, i) {
     var sw = (p.colors || []).map(function (c) { return '<span class="swatch" title="' + c + '" style="background:' + (COLORS[c] || '#777') + '"></span>'; }).join('');
     var priceHtml = p.price ? '<span class="price">' + fmt(p.price) + '</span>' : '<span class="price price--ask">Цена по запросу</span>';
     var btn = p.price
-      ? '<button class="add-btn' + (cart[p.id] ? ' is-added' : '') + '" data-add="' + p.id + '"><svg class="i"><use href="#i-' + (cart[p.id] ? 'cart' : 'plus') + '"/></svg>' + (cart[p.id] ? 'В корзине' : 'В корзину') + '</button>'
+      ? '<button class="add-btn' + (inCart(p.id) ? ' is-added' : '') + '" data-add="' + p.id + '"><svg class="i"><use href="#i-' + (inCart(p.id) ? 'cart' : 'plus') + '"/></svg>' + (inCart(p.id) ? 'В корзине' : 'В корзину') + '</button>'
       : '<a class="add-btn" href="https://wa.me/79951138708?text=' + encodeURIComponent('Здравствуйте! Интересует: ' + p.title) + '" target="_blank" rel="noopener">Узнать цену</a>';
     return '<article class="product" style="animation-delay:' + (i * 40) + 'ms">' +
       '<div class="product__media">' + (p.tag ? '<span class="product__tag">' + p.tag + '</span>' : '') +
@@ -186,21 +189,64 @@
     var b = $('#cartCount'), n = cartQty(); b.textContent = n; b.classList.toggle('is-on', n > 0);
     if (bump) { b.classList.remove('bump'); void b.offsetWidth; b.classList.add('bump'); }
   }
-  function saveCart() { store.set('bt-cart', cart); updateCartBadge(true); }
-  function addToCart(id) {
-    cart[id] = (cart[id] || 0) + 1; saveCart(); toast('«' + byId[id].title + '» в корзине');
+  function saveCart() { store.set('bt-cart2', cart); updateCartBadge(true); }
+  function addToCart(id, color, size, qty) {
+    var key = [id, color || '', size || ''].join('|');
+    cart[key] = (cart[key] || 0) + (qty || 1); saveCart(); toast('«' + byId[id].title + '» в корзине');
     $$('.add-btn[data-add="' + id + '"]').forEach(function (b) { b.classList.add('is-added'); b.innerHTML = '<svg class="i"><use href="#i-cart"/></svg>В корзине'; });
   }
+  function requestAdd(id) {
+    var p = byId[id];
+    if (needsOptions(p)) { openOptions(p); return; }
+    addToCart(id, p.colors ? p.colors[0] : '', p.sizes ? p.sizes[0] : '', 1);
+  }
+
+  /* ---------- Выбор цвета и размера ---------- */
+  var opt = { p: null, color: '', size: '', qty: 1 };
+  function chips(name, list, cur, isColor) {
+    return list.map(function (v) {
+      return '<button type="button" class="chip' + (isColor ? ' chip--color' : '') + (v === cur ? ' is-on' : '') + '" data-opt="' + name + '" data-val="' + esc(v) + '">' +
+        (isColor ? '<span class="swatch" style="background:' + (COLORS[v] || '#777') + '"></span>' : '') + esc(v) + '</button>';
+    }).join('');
+  }
+  function renderOptions() {
+    var p = opt.p, box = $('#optBody');
+    box.innerHTML =
+      '<div class="opt__head"><div class="opt__img">' + imgTag(p, p.cover ? 'is-cover' : '') + '</div><div><h3 class="h4">' + esc(p.title) + '</h3><div class="opt__price">' + fmt(p.price) + '</div></div></div>' +
+      (p.colors && p.colors.length ? '<div class="opt__group"><div class="opt__label">Цвет: <b>' + esc(opt.color || '—') + '</b></div><div class="chips">' + chips('color', p.colors, opt.color, true) + '</div></div>' : '') +
+      (p.sizes && p.sizes.length ? '<div class="opt__group"><div class="opt__label">Размер: <b>' + esc(opt.size || 'не выбран') + '</b></div><div class="chips">' + chips('size', p.sizes, opt.size, false) + '</div></div>' : '') +
+      '<div class="opt__foot"><div class="qty qty--lg"><button type="button" data-oq="-1" aria-label="Меньше"><svg class="i"><use href="#i-minus"/></svg></button><span>' + opt.qty + '</span><button type="button" data-oq="1" aria-label="Больше"><svg class="i"><use href="#i-plus"/></svg></button></div>' +
+      '<button type="button" class="btn btn--primary" id="optAdd">В корзину · ' + fmt(p.price * opt.qty) + '</button></div>';
+  }
+  function openOptions(p) {
+    opt = { p: p, color: p.colors && p.colors.length === 1 ? p.colors[0] : '', size: p.sizes && p.sizes.length === 1 ? p.sizes[0] : '', qty: 1 };
+    renderOptions(); open($('#optModal'));
+  }
+  $('#optModal').addEventListener('click', function (e) {
+    var c = e.target.closest('[data-opt]'), q = e.target.closest('[data-oq]');
+    if (c) { opt[c.dataset.opt] = c.dataset.val; renderOptions(); return; }
+    if (q) { opt.qty = Math.max(1, Math.min(99, opt.qty + (+q.dataset.oq))); renderOptions(); return; }
+    if (e.target.closest('#optAdd')) {
+      var p = opt.p;
+      if (p.colors && p.colors.length && !opt.color) { toast('Выберите цвет'); return; }
+      if (p.sizes && p.sizes.length && !opt.size) { toast('Выберите размер'); return; }
+      addToCart(p.id, opt.color, opt.size, opt.qty); close();
+    }
+  });
   function renderCart() {
     var box = $('#cartItems'), ids = Object.keys(cart), total = 0;
     if (!ids.length) {
       box.innerHTML = '<div class="empty"><svg class="i"><use href="#i-cart"/></svg>Корзина пуста<br><small>Добавьте товары из каталога</small></div>';
     } else {
-      box.innerHTML = ids.map(function (id) {
-        var p = byId[id]; if (!p) return ''; total += p.price * cart[id];
-        return '<div class="line-item">' + imgTag(p) + '<div><div class="line-item__title">' + esc(p.title) + '</div><div class="line-item__price">' + fmt(p.price) + '</div>' +
-          '<button class="remove" data-rm="' + id + '">Удалить</button></div>' +
-          '<div class="qty"><button data-dec="' + id + '" aria-label="Меньше"><svg class="i"><use href="#i-minus"/></svg></button><span>' + cart[id] + '</span><button data-inc="' + id + '" aria-label="Больше"><svg class="i"><use href="#i-plus"/></svg></button></div></div>';
+      box.innerHTML = ids.map(function (key) {
+        var parts = key.split('|'), p = byId[parts[0]]; if (!p) return ''; total += p.price * cart[key];
+        var vars = [parts[1] ? 'Цвет: ' + parts[1] : '', parts[2] ? 'Размер: ' + parts[2] : ''].filter(Boolean).join(' · ');
+        var k = esc(key);
+        return '<div class="line-item">' + imgTag(p, p.cover ? 'is-cover' : '') + '<div><div class="line-item__title">' + esc(p.title) + '</div>' +
+          (vars ? '<div class="line-item__vars">' + esc(vars) + '</div>' : '') +
+          '<div class="line-item__price">' + fmt(p.price) + '</div>' +
+          '<button class="remove" data-rm="' + k + '">Удалить</button></div>' +
+          '<div class="qty"><button data-dec="' + k + '" aria-label="Меньше"><svg class="i"><use href="#i-minus"/></svg></button><span>' + cart[key] + '</span><button data-inc="' + k + '" aria-label="Больше"><svg class="i"><use href="#i-plus"/></svg></button></div></div>';
       }).join('');
     }
     $('#cartTotal').textContent = fmt(total);
@@ -212,7 +258,7 @@
   document.addEventListener('click', function (e) {
     var t = e.target.closest('[data-add],[data-inc],[data-dec],[data-rm]'); if (!t) return;
     var d = t.dataset;
-    if (d.add) { addToCart(d.add); if (openEl && openEl.id === 'cartDrawer') renderCart(); }
+    if (d.add) { requestAdd(d.add); }
     else if (d.inc) { cart[d.inc]++; saveCart(); renderCart(); }
     else if (d.dec) { if (--cart[d.dec] <= 0) delete cart[d.dec]; saveCart(); renderCart(); renderGrid(); }
     else if (d.rm) { delete cart[d.rm]; saveCart(); renderCart(); renderGrid(); }

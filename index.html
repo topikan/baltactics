@@ -195,7 +195,7 @@
         <span class="cat__title">Скрытое<br>ношение</span><svg class="i cat__arrow"><use href="#i-arrow"/></svg>
       </a>
       <a href="#products" class="cat" data-tab-jump="insoles">
-        <img src="https://baltactics.ru/lib/image/product/kevlar_insoles_3.webp" alt="Кевларовые стельки" loading="lazy" class="cat__img--photo" onerror="this.onerror=null;this.src='assets/img/placeholder.svg'">
+        <img src="assets/img/cat-insoles.jpg" alt="Кевларовые стельки" loading="lazy">
         <span class="cat__title">Кевларовые<br>стельки</span><svg class="i cat__arrow"><use href="#i-arrow"/></svg>
       </a>
     </div>
@@ -387,6 +387,14 @@
     <button class="btn btn--primary btn--block" id="checkout">Оформить заказ <svg class="i"><use href="#i-arrow"/></svg></button>
   </div>
 </aside>
+
+<!-- Options modal -->
+<div class="modal" id="optModal" role="dialog" aria-modal="true" aria-label="Выбор параметров">
+  <div class="modal__box modal__box--opt">
+    <button class="icon-btn modal__close" data-close aria-label="Закрыть"><svg class="i"><use href="#i-x"/></svg></button>
+    <div id="optBody"></div>
+  </div>
+</div>
 
 <!-- Mobile menu -->
 <aside class="drawer drawer--left" id="mobileMenu" aria-label="Меню">
