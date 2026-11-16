@@ -1,90 +1,181 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="light">
+<html lang="ru" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>БалТактика — баллистическая защита и тактическое снаряжение</title>
-  <meta name="description" content="Российский производитель: бронежилеты, жилеты скрытого ношения, бронепанели и кевларовые стельки. Сертификация EAC. Москва.">
-  <meta name="theme-color" content="#f2f0eb">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://yandex.ru; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
+  <meta name="description" content="БалТактика: бронежилеты, жилеты скрытого ношения, бронепанели и кевларовые стельки. Сертификация EAC. Москва, доставка по всей России.">
+  <meta name="theme-color" content="#0e0e0c">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://baltactics.ru; font-src 'self'; frame-src https://yandex.ru; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="https://topikan.github.io/baltactics/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:site_name" content="БалТактика">
   <meta property="og:title" content="БалТактика — баллистическая защита и тактическое снаряжение">
-  <meta property="og:description" content="Российский производитель: бронежилеты, жилеты скрытого ношения, бронепанели и кевларовые стельки. Сертификация EAC. Москва.">
+  <meta property="og:description" content="Российский производитель: бронежилеты, жилеты скрытого ношения, бронепанели и кевларовые стельки. Сертификация EAC.">
   <meta property="og:image" content="https://topikan.github.io/baltactics/assets/img/og.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/unbounded-cyrillic-600-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/manrope-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/fonts.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script>
-    (function(){try{var t=localStorage.getItem('bt-theme');if(t!=='dark'&&t!=='light'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
-  </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Store","name":"БалТактика","alternateName":"BalTactics","description":"Российский производитель баллистической и противоосколочной защиты: кевларовые стельки и тактическое снаряжение.","url":"https://baltactics.ru/","telephone":"+7-985-492-87-08","email":"micasawar@mail.ru","address":{"@type":"PostalAddress","streetAddress":"Шмитовский проезд, 39к2","addressLocality":"Москва","addressCountry":"RU"},"openingHours":"Mo-Fr 09:00-18:00","sameAs":["https://t.me/BalTactics","https://www.ozon.ru/seller/baltaktika-baltactics-1356784/","https://www.avito.ru/brands/i1352211/all?sellerId=21a1eb8fa65629a7a272736a3c88fd65","https://market.yandex.ru/business--mi-casa-moi-dom/58319533","https://youtube.com/@mi_casa_home"]}
   </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function(){try{var t=localStorage.getItem('bt-theme');if(!t){t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+  </script>
 </head>
-<body data-page="home">
-<a class="skip" href="#main">Перейти к содержимому</a>
+<body>
 
+<!-- ============ TOP BAR ============ -->
+<div class="topbar" role="complementary" aria-label="Контакты и маркетплейсы">
+  <div class="container topbar__inner">
+    <div class="topbar__left">
+      <a href="tel:+79854928708" class="topbar__link">
+        <svg class="i"><use href="#i-phone"/></svg>+7 (985) 492-87-08
+      </a>
+      <span class="topbar__link topbar__hide-sm">
+        <svg class="i"><use href="#i-pin"/></svg>Москва, Шмитовский проезд, 39к2
+      </span>
+      <span class="topbar__link topbar__hide-md">Пн–Пт 9:00–18:00</span>
+    </div>
+    <div class="topbar__right">
+      <span class="topbar__hide-sm">Мы на маркетплейсах:</span>
+      <a href="https://www.ozon.ru/seller/baltaktika-baltactics-1356784/" target="_blank" rel="noopener">Ozon</a>
+      <a href="https://www.avito.ru/brands/i1352211/all?sellerId=21a1eb8fa65629a7a272736a3c88fd65" target="_blank" rel="noopener">Авито</a>
+      <a href="https://market.yandex.ru/business--mi-casa-moi-dom/58319533" target="_blank" rel="noopener">Я.Маркет</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
 <header class="header" id="header">
   <div class="container header__inner">
-    <a href="index.html" class="logo" aria-label="БалТактика — на главную">
-      <svg class="logo__mark" role="img" aria-hidden="true"><use href="#i-logo"/></svg>
+    <a href="#" class="logo" aria-label="БалТактика — на главную">
+      <svg class="logo__mark" role="img" aria-label="БалТактика"><use href="#i-logo"/></svg>
     </a>
 
-    <nav class="nav" aria-label="Основное меню">
-      <a href="index.html" class="nav__link" data-nav="home">Главная</a>
-      <div class="nav__item">
-        <a href="catalog.html" class="nav__link" data-nav="catalog" aria-haspopup="true">Магазин <svg class="i i--sm"><use href="#i-chevron"/></svg></a>
-        <div class="dropdown" role="menu">
-          <a href="catalog.html#vests" role="menuitem">Бронежилеты и бронепанели</a>
-          <a href="catalog.html#concealed" role="menuitem">Скрытое ношение</a>
-          <a href="catalog.html#insoles" role="menuitem">Кевларовые стельки</a>
-          <a href="catalog.html#other" role="menuitem">Ткани и аксессуары</a>
-          <a href="catalog.html" role="menuitem" class="dropdown__all">Весь каталог →</a>
+    <nav class="nav" id="nav" aria-label="Основное меню">
+      <div class="nav__item nav__item--mega">
+        <button class="nav__link" aria-haspopup="true" aria-expanded="false" id="catalogBtn">
+          Каталог <svg class="i i--sm"><use href="#i-chevron"/></svg>
+        </button>
+        <div class="mega" id="mega">
+          <div class="mega__grid">
+            <a href="#catalog" class="mega__col">
+              <span class="mega__title">Бронежилеты</span>
+              <span>Бронежилет «Защитник»</span><span>Линейка жилетов</span><span>Бронепанели</span>
+            </a>
+            <a href="#catalog" class="mega__col">
+              <span class="mega__title">Скрытое ношение</span>
+              <span>Жилет «Невидимка»</span><span>Жилет «Русский Богатырь»</span><span>Майка скрытого ношения</span>
+            </a>
+            <a href="#catalog" class="mega__col">
+              <span class="mega__title">Кевларовые стельки</span>
+              <span>Противоосколочные</span><span>Антипрокольные</span><span>Класс защиты C2</span>
+            </a>
+            <a href="#catalog" class="mega__col">
+              <span class="mega__title">Защитная одежда</span>
+              <span>Куртка «Броне»</span><span>Кофта с защитой локтей</span><span>Противоосколочные одеяла</span>
+            </a>
+            <div class="mega__promo">
+              <img src="assets/img/cat-vest.jpg" alt="">
+              <div>
+                <span class="eyebrow">Хит продаж</span>
+                <b>Бронежилет «Защитник»</b>
+                <span class="mega__price">19 000 ₽</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <a href="index.html#coop" class="nav__link">Сотрудничество</a>
-      <a href="index.html#docs" class="nav__link">Документы</a>
-      <a href="index.html#about" class="nav__link">О нас</a>
-      <a href="index.html#contacts" class="nav__link">Контакты</a>
+      <a href="#tech" class="nav__link">Технологии</a>
+      <a href="#about" class="nav__link">О компании</a>
+      <a href="#coop" class="nav__link">Сотрудничество</a>
+      <a href="#contacts" class="nav__link">Контакты</a>
     </nav>
 
     <div class="header__actions">
-      <button class="icon-btn" data-open="searchModal" aria-label="Поиск по каталогу" title="Поиск (Ctrl+K)"><svg class="i"><use href="#i-search"/></svg></button>
-      <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Сменить тему" title="Тёмная / светлая тема">
-        <svg class="i theme-toggle__moon"><use href="#i-moon"/></svg>
-        <svg class="i theme-toggle__sun"><use href="#i-sun"/></svg>
+      <button class="search-trigger" id="searchOpen" aria-label="Поиск по каталогу">
+        <svg class="i"><use href="#i-search"/></svg>
+        <span>Поиск по каталогу…</span>
       </button>
-      <button class="login-btn" data-open="accountModal"><svg class="i"><use href="#i-user"/></svg><span>Войти</span></button>
-      <button class="icon-btn" id="cartOpen" title="Корзина"><span class="sr-only">Корзина, товаров:</span><svg class="i"><use href="#i-cart"/></svg><span class="badge" id="cartCount">0</span></button>
-      <button class="icon-btn burger" data-open="mobileMenu" aria-label="Меню"><span></span><span></span><span></span></button>
+      <button class="icon-btn icon-btn--search-sm" id="searchOpenSm" aria-label="Поиск"><svg class="i"><use href="#i-search"/></svg></button>
+      <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Сменить тему" title="Сменить тему">
+        <svg class="i theme-toggle__sun"><use href="#i-sun"/></svg>
+        <svg class="i theme-toggle__moon"><use href="#i-moon"/></svg>
+      </button>
+      <button class="icon-btn" id="accountOpen" aria-label="Личный кабинет" title="Войти"><svg class="i"><use href="#i-user"/></svg></button>
+      <button class="icon-btn" id="cartOpen" title="Корзина"><span class="sr-only">Корзина, товаров:</span>
+        <svg class="i"><use href="#i-cart"/></svg><span class="badge" id="cartCount">0</span>
+      </button>
+      <button class="icon-btn burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
-<main id="main">
+<main>
 
 <!-- ============ HERO ============ -->
-<section class="hero">
-  <div class="hero__media" aria-hidden="true"></div>
-  <div class="container hero__inner">
-    <div class="hero__content">
-      <span class="hero__line" aria-hidden="true"></span>
-      <h1 class="display">Защита,<br>продуманная<br>до деталей</h1>
-      <p class="hero__lead">Баллистическая защита<br>и тактическое снаряжение</p>
-      <a href="catalog.html" class="btn btn--primary">Перейти в магазин <svg class="i"><use href="#i-arrow"/></svg></a>
-    </div>
+<section class="hero" id="hero">
+  <div class="hero__slides">
+    <article class="slide is-active" data-bg="assets/img/hero.jpg">
+      <div class="container slide__inner">
+        <div class="slide__content">
+          <p class="kicker">Надёжная защита<br>в любых условиях</p>
+          <h1 class="display">Защита,<br>на которую<br><em>можно положиться.</em></h1>
+          <p class="lead">Баллистическая защита и тактическое снаряжение для экстремальных условий — от бронежилетов до кевларовых стелек.</p>
+          <div class="btn-row">
+            <a href="#catalog" class="btn btn--primary">Перейти в каталог <svg class="i"><use href="#i-arrow"/></svg></a>
+            <a href="#about" class="btn btn--link">О компании <svg class="i"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="slide" data-bg="assets/img/about.jpg" data-pos="78% center">
+      <div class="container slide__inner">
+        <div class="slide__content">
+          <p class="kicker">Скрытое ношение<br>для тактических операций</p>
+          <h1 class="display">Защита,<br>которую<br><em>не видно.</em></h1>
+          <p class="lead">Жилеты «Невидимка» и «Русский Богатырь», майки скрытого ношения. Три цвета: чёрный, олива, песочный.</p>
+          <div class="btn-row">
+            <a href="#catalog" class="btn btn--primary" data-tab-jump="concealed">Смотреть модели <svg class="i"><use href="#i-arrow"/></svg></a>
+            <a href="https://wa.me/79951138708?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D0%BE%D0%BC%D0%BE%D0%B3%D0%B8%D1%82%D0%B5%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%80" target="_blank" rel="noopener" class="btn btn--link">Подобрать размер <svg class="i"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="slide" data-bg="assets/img/tech.jpg">
+      <div class="container slide__inner">
+        <div class="slide__content">
+          <p class="kicker">Собственная технология<br>кевлар + полимер</p>
+          <h1 class="display">Уверенность<br>в каждом<br><em>шаге.</em></h1>
+          <p class="lead">Кевларовые стельки прочностью 1200–1600 Дж/Н: противоосколочные и антипрокольные, с сертификацией EAC.</p>
+          <div class="btn-row">
+            <a href="#catalog" class="btn btn--primary" data-tab-jump="insoles">Выбрать стельки <svg class="i"><use href="#i-arrow"/></svg></a>
+            <a href="#tech" class="btn btn--link">Технология <svg class="i"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+  <div class="hero__bg" aria-hidden="true"><div class="hero__bg-img"></div></div>
+  <span class="corner corner--tl" aria-hidden="true"></span>
+  <span class="corner corner--br" aria-hidden="true"></span>
+
+  <div class="container hero__controls">
+    <div class="pager"><b id="slideNow">01</b> / <span id="slideTotal">03</span></div>
+    <button class="arrow-btn" id="slidePrev" aria-label="Предыдущий слайд"><svg class="i"><use href="#i-arrow-l"/></svg></button>
+    <button class="arrow-btn" id="slideNext" aria-label="Следующий слайд"><svg class="i"><use href="#i-arrow"/></svg></button>
+    <div class="progress"><span id="slideProgress"></span></div>
   </div>
 </section>
 
 <!-- ============ FEATURES ============ -->
-<section class="features" aria-label="Преимущества">
+<section class="features">
   <div class="container features__grid">
     <div class="feature"><svg class="feature__icon"><use href="#i-shield"/></svg><span>Сертификация<br>EAC</span></div>
     <div class="feature"><svg class="feature__icon"><use href="#i-gem"/></svg><span>Кевлар и собственные<br>полимеры</span></div>
@@ -93,84 +184,128 @@
   </div>
 </section>
 
-<!-- ============ POPULAR ============ -->
-<section class="section" id="popular">
+<!-- ============ CATALOG CATEGORIES ============ -->
+<section class="section" id="catalog">
   <div class="container">
     <div class="section__head">
       <div>
         <p class="eyebrow">Каталог</p>
-        <h2 class="h2">Популярные товары</h2>
+        <h2 class="h2">Каталог<br><em>продукции</em></h2>
       </div>
-      <a href="catalog.html" class="link-arrow">Перейти в каталог <svg class="i"><use href="#i-arrow"/></svg></a>
+      <a href="#products" class="btn btn--link">Все товары <svg class="i"><use href="#i-arrow"/></svg></a>
     </div>
-    <div class="products products--row" id="productGrid" data-ids="cc-vest,ins-34,vest,plate,zaschitnik,nevidimka"></div>
-  </div>
-</section>
 
-<!-- ============ TECH ============ -->
-<section class="tech" id="tech">
-  <div class="tech__media" aria-hidden="true"></div>
-  <div class="container tech__inner">
-    <div class="tech__content">
-      <p class="eyebrow eyebrow--line">Технологии</p>
-      <h2 class="h2 h2--light">Кевлар и высокопрочные<br>полимеры</h2>
-      <p>Собственные полимерные композиции, арамидное волокно и СВМПЭ — лёгкая, надёжная и проверенная защита.</p>
-      <ul class="tech__stats">
-        <li><b>1600 Дж/Н</b><span>стойкость стелек<br>к проколу</span></li>
-        <li><b>Бр1+ / С2</b><span>класс защиты<br>бронепакетов</span></li>
-        <li><b>до 24</b><span>слоёв СВМПЭ<br>в стельке</span></li>
-      </ul>
-      <a href="catalog.html#insoles" class="btn btn--outline-light">Смотреть стельки <svg class="i"><use href="#i-arrow"/></svg></a>
-    </div>
-    <div class="tech__badge" aria-label="Сертификация EAC">
-      <span>сертифицировано</span>
-      <b>EAC</b>
+    <div class="cats">
+      <a href="#products" class="cat" data-tab-jump="vests">
+        <img src="assets/img/cat-vest.jpg" alt="" loading="lazy">
+        <span class="cat__title">Бронежилеты<br>и плитоносцы</span><svg class="i cat__arrow"><use href="#i-arrow"/></svg>
+      </a>
+      <a href="#products" class="cat" data-tab-jump="vests">
+        <img src="assets/img/cat-plates.jpg" alt="" loading="lazy">
+        <span class="cat__title">Бронепанели</span><svg class="i cat__arrow"><use href="#i-arrow"/></svg>
+      </a>
+      <a href="#products" class="cat" data-tab-jump="concealed">
+        <img src="assets/img/cat-concealed.jpg" alt="" loading="lazy">
+        <span class="cat__title">Скрытое<br>ношение</span><svg class="i cat__arrow"><use href="#i-arrow"/></svg>
+      </a>
+      <a href="#products" class="cat" data-tab-jump="insoles">
+        <img src="assets/img/cat-insoles.jpg" alt="" loading="lazy">
+        <span class="cat__title">Кевларовые<br>стельки</span><svg class="i cat__arrow"><use href="#i-arrow"/></svg>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ============ ABOUT + REVIEWS ============ -->
-<section class="section" id="about">
-  <div class="container split">
-    <div class="split__about">
-      <p class="eyebrow eyebrow--line">О компании</p>
-      <h2 class="h2 h2--sm">БалТактика —<br>выбор профессионалов</h2>
-      <p class="muted">Российский производитель баллистической и противоосколочной защиты. Специализируемся на кевларовых стельках и тактическом снаряжении — для профессионалов и гражданских.</p>
+<!-- ============ PRODUCTS WITH TABS ============ -->
+<section class="section section--tight" id="products">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Магазин</p>
+        <h2 class="h2">Популярные <em>товары</em></h2>
+      </div>
+      <div class="tabs" role="tablist" id="tabs">
+        <button class="tab is-active" role="tab" data-tab="all">Все</button>
+        <button class="tab" role="tab" data-tab="vests">Бронежилеты</button>
+        <button class="tab" role="tab" data-tab="concealed">Скрытое ношение</button>
+        <button class="tab" role="tab" data-tab="insoles">Стельки</button>
+        <button class="tab" role="tab" data-tab="other">Прочее</button>
+      </div>
+    </div>
+    <div class="products" id="productGrid"></div>
+    <div class="center-row">
+      <button class="btn btn--ghost" id="showMore">Смотреть остальные <svg class="i"><use href="#i-arrow"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TECH BANNER ============ -->
+<section class="section section--tight" id="tech">
+  <div class="container">
+    <div class="tech">
+      <div class="tech__media" aria-hidden="true"></div>
+      <div class="tech__badge"><svg class="i"><use href="#i-shield"/></svg><span><b>EAC</b>сертифицированные материалы</span></div>
+      <div class="tech__content">
+        <p class="eyebrow">Технологии</p>
+        <h2 class="h3">Передовые<br>технологии защиты</h2>
+        <p>Собственноручно разработанные полимеры и кевлар — высокая степень защиты от осколков при минимальном весе и комфорт при длительном ношении.</p>
+        <ul class="tech__list">
+          <li><b>1200–1600</b><span>Дж/Н — прочность<br>кевларовых стелек</span></li>
+          <li><b>C2</b><span>класс защиты<br>стелек</span></li>
+          <li><b>3,4 мм</b><span>толщина<br>стельки</span></li>
+        </ul>
+        <a href="#products" class="btn btn--primary btn--sm" data-tab-jump="insoles">Выбрать стельки <svg class="i"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section section--tight" id="about">
+  <div class="container">
+   <div class="about">
+    <div class="about__media"><button class="play" id="playBtn" aria-label="Смотреть видео"><svg class="i"><use href="#i-play"/></svg></button></div>
+    <div class="about__content">
+      <p class="eyebrow">О компании</p>
+      <h2 class="h2 h2--sm">БалТактика —<br><em>выбор профессионалов</em></h2>
+      <p>Российский производитель баллистической и противоосколочной защиты. Собственные полимерные композиции и кевларовые волокна — высокая прочность при малом весе, для профессионалов и гражданских.</p>
       <div class="stats">
-        <div class="stat"><b>2000+</b><span>отзывов на 5★<br>на Авито</span></div>
-        <div class="stat"><b>EAC</b><span>сертификация<br>изделий</span></div>
-        <div class="stat"><b>3</b><span>маркетплейса</span></div>
+        <div class="stat"><b>2000+</b><span>отзывов на&nbsp;5★<br>на Авито</span></div>
+        <div class="stat"><b>EAC</b><span>международная<br>сертификация</span></div>
+        <div class="stat"><b>3</b><span>маркетплейса:<br>Ozon, Авито, Я.Маркет</span></div>
       </div>
-      <a href="#coop" class="btn btn--ghost">Узнать больше <svg class="i"><use href="#i-arrow"/></svg></a>
+      <a href="#coop" class="btn btn--ghost">Работаем с бизнесом <svg class="i"><use href="#i-arrow"/></svg></a>
     </div>
-    <div class="split__reviews" id="reviews">
-      <div class="reviews__head">
-        <p class="eyebrow eyebrow--line">Отзывы клиентов</p>
-        <a href="https://www.avito.ru/brands/i1352211/all?sellerId=21a1eb8fa65629a7a272736a3c88fd65" target="_blank" rel="noopener" class="link-arrow">Все отзывы <svg class="i"><use href="#i-arrow"/></svg></a>
+   </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="section" id="reviews">
+  <div class="container">
+    <div class="reviews">
+      <div class="reviews__score">
+        <span class="reviews__num">5.0</span>
+        <span class="stars">★★★★★</span>
+        <span class="muted">Более 2000 положительных отзывов</span>
       </div>
-      <h2 class="h2 h2--sm">Нам доверяют</h2>
-      <div class="reviews">
-        <div class="review" id="review" aria-live="polite"></div>
-        <figure class="reviews__photo">
-          <img src="assets/img/test.jpg" alt="Бронепанель после испытаний обстрелом" loading="lazy">
-          <figcaption>Проверка на прочность</figcaption>
-          <div class="reviews__nav">
-            <button class="arrow-btn" id="revPrev" aria-label="Предыдущий отзыв"><svg class="i"><use href="#i-arrow-l"/></svg></button>
-            <button class="arrow-btn" id="revNext" aria-label="Следующий отзыв"><svg class="i"><use href="#i-arrow"/></svg></button>
-          </div>
-        </figure>
+      <div class="reviews__text">
+        <p class="eyebrow">Отзывы</p>
+        <h2 class="h3">Нам доверяют тысячи покупателей</h2>
+        <p class="muted">Посмотрите, как прошли покупки у наших клиентов, — все отзывы опубликованы на Авито.</p>
       </div>
+      <a class="btn btn--primary" href="https://www.avito.ru/brands/i1352211/all?sellerId=21a1eb8fa65629a7a272736a3c88fd65" target="_blank" rel="noopener">Читать отзывы <svg class="i"><use href="#i-arrow"/></svg></a>
     </div>
   </div>
 </section>
 
 <!-- ============ COOPERATION ============ -->
-<section class="section section--alt" id="coop">
+<section class="section section--tight" id="coop">
   <div class="container">
     <div class="section__head">
       <div>
         <p class="eyebrow">Сотрудничество</p>
-        <h2 class="h2">Работаем с бизнесом</h2>
+        <h2 class="h2 h2--sm">Работаем<br><em>с бизнесом</em></h2>
       </div>
       <p class="muted section__lead">Дилеры, корпоративные и государственные заказчики. Документы, тестовые образцы и сопровождение на всех этапах сделки.</p>
     </div>
@@ -180,8 +315,8 @@
       <article class="coop-card"><span class="coop-card__n">03</span><h3>Госзакупки и тендеры</h3><p>Документация, спецификации и подтверждающие материалы по EAC.</p></article>
       <article class="coop-card"><span class="coop-card__n">04</span><h3>OEM / ODM</h3><p>Индивидуальные партии с брендингом и конфигурацией под вашу задачу.</p></article>
     </div>
-    <div class="docs" id="docs">
-      <div>
+    <div class="docs">
+      <div class="docs__text">
         <h3 class="h4">Документы — по запросу</h3>
         <ul class="ticks">
           <li>Декларации и сертификаты соответствия EAC</li>
@@ -198,18 +333,33 @@
   </div>
 </section>
 
+<!-- ============ MARKETPLACES STRIP ============ -->
+<section class="brands" aria-label="Где купить">
+  <div class="container brands__grid">
+    <a href="https://www.ozon.ru/seller/baltaktika-baltactics-1356784/" target="_blank" rel="noopener" class="brand">OZON</a>
+    <a href="https://www.avito.ru/brands/i1352211/all?sellerId=21a1eb8fa65629a7a272736a3c88fd65" target="_blank" rel="noopener" class="brand">АВИТО</a>
+    <a href="https://market.yandex.ru/business--mi-casa-moi-dom/58319533" target="_blank" rel="noopener" class="brand">ЯНДЕКС&nbsp;МАРКЕТ</a>
+    <a href="https://t.me/BalTactics" target="_blank" rel="noopener" class="brand">TELEGRAM</a>
+  </div>
+</section>
+
 <!-- ============ CONTACTS ============ -->
 <section class="section" id="contacts">
   <div class="container contacts">
-    <div>
+    <div class="contacts__info">
       <p class="eyebrow">Контакты</p>
-      <h2 class="h2">Свяжитесь с нами</h2>
+      <h2 class="h2 h2--sm">Свяжитесь<br><em>с нами</em></h2>
       <ul class="contact-list">
         <li><svg class="i"><use href="#i-phone"/></svg><a href="tel:+79854928708">+7 (985) 492-87-08</a></li>
         <li><svg class="i"><use href="#i-mail"/></svg><a href="mailto:micasawar@mail.ru">micasawar@mail.ru</a></li>
         <li><svg class="i"><use href="#i-pin"/></svg><span>Москва, Шмитовский проезд, 39к2<br><small class="muted">м. Шелепиха</small></span></li>
         <li><svg class="i"><use href="#i-clock"/></svg><span>Пн–Пт 9:00–18:00 <small class="muted">(МСК)</small></span></li>
       </ul>
+      <div class="socials">
+        <a href="https://wa.me/79951138708" target="_blank" rel="noopener" class="social">WhatsApp</a>
+        <a href="https://t.me/BalTactics" target="_blank" rel="noopener" class="social">Telegram</a>
+        <a href="https://youtube.com/@mi_casa_home" target="_blank" rel="noopener" class="social">YouTube</a>
+      </div>
       <div class="map">
         <iframe title="Карта: Шмитовский проезд, 39к2" referrerpolicy="strict-origin-when-cross-origin" src="https://yandex.ru/map-widget/v1/?text=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D0%A8%D0%BC%D0%B8%D1%82%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D0%B5%D0%B7%D0%B4%2C%2039%D0%BA2&z=16" loading="lazy" allowfullscreen></iframe>
       </div>
@@ -217,13 +367,13 @@
     <form class="form" id="feedback" novalidate>
       <h3 class="h4">Обратная связь</h3>
       <p class="muted">Заявка уйдёт сообщением в WhatsApp — менеджер ответит в рабочее время.</p>
-      <label class="field"><span>Ваше имя</span><input type="text" name="name" required autocomplete="name" maxlength="80"></label>
+      <label class="field"><span>Ваше имя</span><input type="text" name="name" required placeholder="Иван" autocomplete="name" maxlength="80"></label>
       <div class="field-row">
-        <label class="field"><span>Телефон</span><input type="tel" name="phone" required autocomplete="tel" maxlength="30" placeholder="+7"></label>
-        <label class="field"><span>E-mail</span><input type="email" name="email" autocomplete="email" maxlength="120"></label>
+        <label class="field"><span>Телефон</span><input type="tel" name="phone" required placeholder="+7 (___) ___-__-__" autocomplete="tel" maxlength="30"></label>
+        <label class="field"><span>E-mail</span><input type="email" name="email" placeholder="mail@example.ru" autocomplete="email" maxlength="120"></label>
       </div>
-      <label class="field"><span>Сообщение</span><textarea name="msg" rows="4" maxlength="1000" placeholder="Что вас интересует?"></textarea></label>
-      <label class="check"><input type="checkbox" required> <span>Согласен на обработку персональных данных и с <a href="#" data-open="privacyModal">политикой конфиденциальности</a></span></label>
+      <label class="field"><span>Сообщение</span><textarea name="msg" rows="4" placeholder="Что вас интересует?" maxlength="1000"></textarea></label>
+      <label class="check"><input type="checkbox" required> <span>Согласен на обработку персональных данных и с <a href="#" data-modal="privacyModal">политикой конфиденциальности</a></span></label>
       <button class="btn btn--primary btn--block" type="submit">Отправить в WhatsApp <svg class="i"><use href="#i-arrow"/></svg></button>
     </form>
   </div>
@@ -231,42 +381,42 @@
 
 </main>
 
+<!-- ============ FOOTER ============ -->
 <footer class="footer">
-  <div class="container footer__top">
-    <a href="index.html" class="logo logo--footer" aria-label="БалТактика — на главную">
-      <svg class="logo__mark" aria-hidden="true"><use href="#i-logo"/></svg>
-    </a>
-    <nav class="footer__nav" aria-label="Меню в подвале">
-      <a href="index.html">Главная</a>
-      <a href="catalog.html">Магазин</a>
-      <a href="index.html#coop">Сотрудничество</a>
-      <a href="index.html#docs">Документы</a>
-      <a href="index.html#about">О нас</a>
-      <a href="index.html#contacts">Контакты</a>
-    </nav>
-    <div class="footer__social">
-      <a href="https://t.me/BalTactics" target="_blank" rel="noopener" aria-label="Telegram"><svg class="i"><use href="#i-tg"/></svg></a>
-      <a href="https://wa.me/79951138708" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="i"><use href="#i-wa"/></svg></a>
-      <a href="https://youtube.com/@mi_casa_home" target="_blank" rel="noopener" aria-label="YouTube"><svg class="i"><use href="#i-yt"/></svg></a>
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <a href="#" class="logo"><svg class="logo__mark" role="img" aria-label="БалТактика"><use href="#i-logo"/></svg></a>
+      <p class="muted">Баллистическая защита и тактическое снаряжение.</p>
+    </div>
+    <div>
+      <h4>Каталог</h4>
+      <a href="#products">Бронежилеты</a><a href="#products">Скрытое ношение</a><a href="#products">Бронепанели</a><a href="#products">Кевларовые стельки</a>
+    </div>
+    <div>
+      <h4>Компания</h4>
+      <a href="#about">О нас</a><a href="#coop">Сотрудничество</a><a href="#coop">Документы</a><a href="#contacts">Контакты</a>
+    </div>
+    <div>
+      <h4>Покупателям</h4>
+      <a href="https://www.ozon.ru/seller/baltaktika-baltactics-1356784/" target="_blank" rel="noopener">Магазин на Ozon</a>
+      <a href="https://www.avito.ru/brands/i1352211/all?sellerId=21a1eb8fa65629a7a272736a3c88fd65" target="_blank" rel="noopener">Магазин на Авито</a>
+      <a href="https://market.yandex.ru/business--mi-casa-moi-dom/58319533" target="_blank" rel="noopener">Яндекс Маркет</a>
+      <a href="#" data-modal="privacyModal">Политика конфиденциальности</a>
     </div>
   </div>
-  <div class="container footer__mid">
-    <span>Москва, Шмитовский проезд, 39к2 · Пн–Пт 9:00–18:00</span>
-    <a href="tel:+79854928708">+7 (985) 492-87-08</a>
-    <a href="mailto:micasawar@mail.ru">micasawar@mail.ru</a>
-    <span class="footer__shops">Мы на <a href="https://www.ozon.ru/seller/baltaktika-baltactics-1356784/" target="_blank" rel="noopener">Ozon</a>, <a href="https://www.avito.ru/brands/i1352211/all?sellerId=21a1eb8fa65629a7a272736a3c88fd65" target="_blank" rel="noopener">Авито</a> и <a href="https://market.yandex.ru/business--mi-casa-moi-dom/58319533" target="_blank" rel="noopener">Яндекс Маркете</a></span>
-  </div>
   <div class="container footer__bottom">
-    <span>© <span class="js-year">2026</span> БалТактика. Все права защищены.</span>
-    <div><a href="#" data-open="privacyModal">Политика конфиденциальности</a><a href="#" data-open="termsModal">Условия использования</a></div>
+    <span>© <span id="year">2026</span> БалТактика. Все права защищены.</span>
+    <a href="tel:+79854928708">+7 (985) 492-87-08</a>
   </div>
 </footer>
 
+<!-- Floating chat -->
 <a href="https://wa.me/79951138708" class="fab" target="_blank" rel="noopener" aria-label="Написать в WhatsApp"><svg class="i"><use href="#i-chat"/></svg></a>
 
+<!-- ============ OVERLAYS ============ -->
 <div class="backdrop" id="backdrop"></div>
 
-<!-- Корзина -->
+<!-- Cart drawer -->
 <aside class="drawer" id="cartDrawer" aria-label="Корзина">
   <div class="drawer__head"><h3 class="h4">Корзина</h3><button class="icon-btn" data-close aria-label="Закрыть"><svg class="i"><use href="#i-x"/></svg></button></div>
   <div class="drawer__body" id="cartItems"></div>
@@ -276,62 +426,9 @@
   </div>
 </aside>
 
-<!-- Мобильное меню -->
-<aside class="drawer drawer--left" id="mobileMenu" aria-label="Меню">
-  <div class="drawer__head"><a href="index.html" class="logo"><svg class="logo__mark" aria-hidden="true"><use href="#i-logo"/></svg></a><button class="icon-btn" data-close aria-label="Закрыть"><svg class="i"><use href="#i-x"/></svg></button></div>
-  <nav class="drawer__body mnav">
-    <a href="index.html">Главная</a><a href="catalog.html">Магазин</a><a href="index.html#coop">Сотрудничество</a><a href="index.html#docs">Документы</a><a href="index.html#about">О нас</a><a href="index.html#contacts">Контакты</a>
-  </nav>
-  <div class="drawer__foot"><button class="btn btn--ghost btn--block" data-open="accountModal">Войти</button><a href="tel:+79854928708" class="btn btn--primary btn--block">+7 (985) 492-87-08</a></div>
-</aside>
-
-<!-- Вход -->
-<div class="modal" id="accountModal" role="dialog" aria-modal="true" aria-label="Личный кабинет">
-  <div class="modal__box">
-    <button class="icon-btn modal__close" data-close aria-label="Закрыть"><svg class="i"><use href="#i-x"/></svg></button>
-    <svg class="modal__logo" aria-hidden="true"><use href="#i-logo"/></svg>
-    <div class="seg" role="tablist">
-      <button class="seg__btn is-active" data-auth="login">Вход</button>
-      <button class="seg__btn" data-auth="register">Регистрация</button>
-    </div>
-    <form class="auth" data-pane="login" novalidate>
-      <label class="field"><span>E-mail или телефон</span><input type="text" required autocomplete="username" maxlength="120"></label>
-      <label class="field"><span>Пароль</span><input type="password" required autocomplete="current-password" maxlength="128"></label>
-      <button class="btn btn--primary btn--block" type="submit">Войти</button>
-    </form>
-    <form class="auth" data-pane="register" hidden novalidate>
-      <label class="field"><span>Имя</span><input type="text" required autocomplete="name" maxlength="80"></label>
-      <label class="field"><span>E-mail</span><input type="email" required autocomplete="email" maxlength="120"></label>
-      <label class="field"><span>Пароль</span><input type="password" required autocomplete="new-password" maxlength="128"></label>
-      <button class="btn btn--primary btn--block" type="submit">Создать аккаунт</button>
-    </form>
-    <p class="muted modal__note">Демо-версия: личный кабинет подключается вместе с бэкендом. Данные никуда не отправляются.</p>
-  </div>
-</div>
-
-<!-- Поиск -->
-<div class="modal modal--top" id="searchModal" role="dialog" aria-modal="true" aria-label="Поиск">
-  <div class="modal__box modal__box--wide">
-    <div class="search-field">
-      <svg class="i"><use href="#i-search"/></svg>
-      <input type="search" id="searchInput" placeholder="Например: стельки, Невидимка, бронепанель" autocomplete="off" maxlength="60">
-      <button class="icon-btn" data-close aria-label="Закрыть"><svg class="i"><use href="#i-x"/></svg></button>
-    </div>
-    <div class="search-results" id="searchResults"></div>
-  </div>
-</div>
-
-<!-- Карточка товара -->
-<div class="modal" id="optModal" role="dialog" aria-modal="true" aria-label="Товар">
-  <div class="modal__box modal__box--product">
-    <button class="icon-btn modal__close" data-close aria-label="Закрыть"><svg class="i"><use href="#i-x"/></svg></button>
-    <div id="optBody"></div>
-  </div>
-</div>
-
-<!-- Оформление заказа -->
+<!-- Checkout modal -->
 <div class="modal" id="orderModal" role="dialog" aria-modal="true" aria-label="Оформление заказа">
-  <div class="modal__box">
+  <div class="modal__box modal__box--opt">
     <button class="icon-btn modal__close" data-close aria-label="Закрыть"><svg class="i"><use href="#i-x"/></svg></button>
     <h3 class="h4">Оформление заказа</h3>
     <div class="order-sum" id="orderSum"></div>
@@ -345,27 +442,83 @@
         <button class="btn btn--primary" type="submit" data-via="wa">Отправить в WhatsApp</button>
         <button class="btn btn--ghost" type="submit" data-via="mail">На e-mail</button>
       </div>
-      <p class="muted modal__note">Заказ уйдёт менеджеру готовым сообщением — останется нажать «Отправить».</p>
+      <p class="muted modal__note">Заказ уйдёт менеджеру готовым сообщением — останется нажать «Отправить». Купить сразу можно и на <a href="https://www.ozon.ru/seller/baltaktika-baltactics-1356784/" target="_blank" rel="noopener">Ozon</a>.</p>
     </form>
   </div>
 </div>
 
-<!-- Документы -->
 <div class="modal" id="privacyModal" role="dialog" aria-modal="true" aria-label="Политика конфиденциальности">
   <div class="modal__box">
     <button class="icon-btn modal__close" data-close aria-label="Закрыть"><svg class="i"><use href="#i-x"/></svg></button>
+    <p class="eyebrow">Документ</p>
     <h3 class="h4">Политика конфиденциальности</h3>
     <p class="muted">Здесь будет полный текст политики обработки персональных данных (152-ФЗ) с реквизитами оператора. Текст предоставляет владелец сайта.</p>
-    <p class="muted">Демо-версия сайта не хранит и не передаёт введённые данные: формы готовят сообщение, которое вы отправляете сами.</p>
+    <p class="muted">Демо-версия сайта не хранит и не передаёт введённые данные: формы формируют сообщение, которое вы отправляете сами.</p>
   </div>
 </div>
-<div class="modal" id="termsModal" role="dialog" aria-modal="true" aria-label="Условия использования">
+
+<!-- Options modal -->
+<div class="modal" id="optModal" role="dialog" aria-modal="true" aria-label="Выбор параметров">
+  <div class="modal__box modal__box--opt">
+    <button class="icon-btn modal__close" data-close aria-label="Закрыть"><svg class="i"><use href="#i-x"/></svg></button>
+    <div id="optBody"></div>
+  </div>
+</div>
+
+<!-- Mobile menu -->
+<aside class="drawer drawer--left" id="mobileMenu" aria-label="Меню">
+  <div class="drawer__head"><a href="#" class="logo"><svg class="logo__mark" role="img" aria-label="БалТактика"><use href="#i-logo"/></svg></a><button class="icon-btn" data-close aria-label="Закрыть"><svg class="i"><use href="#i-x"/></svg></button></div>
+  <nav class="drawer__body mnav">
+    <a href="#catalog">Каталог</a><a href="#products">Товары</a><a href="#tech">Технологии</a><a href="#about">О компании</a><a href="#coop">Сотрудничество</a><a href="#contacts">Контакты</a>
+  </nav>
+  <div class="drawer__foot"><a href="tel:+79854928708" class="btn btn--ghost btn--block">+7 (985) 492-87-08</a></div>
+</aside>
+
+<!-- Account modal -->
+<div class="modal" id="accountModal" role="dialog" aria-modal="true" aria-label="Личный кабинет">
   <div class="modal__box">
     <button class="icon-btn modal__close" data-close aria-label="Закрыть"><svg class="i"><use href="#i-x"/></svg></button>
-    <h3 class="h4">Условия использования</h3>
-    <p class="muted">Здесь будут условия продажи, доставки, оплаты и возврата. Текст предоставляет владелец сайта.</p>
+    <svg class="logo__mark modal__logo"><use href="#i-logo"/></svg>
+    <div class="seg" role="tablist">
+      <button class="seg__btn is-active" data-auth="login">Вход</button>
+      <button class="seg__btn" data-auth="register">Регистрация</button>
+    </div>
+    <form class="auth" data-pane="login">
+      <label class="field"><span>E-mail или телефон</span><input type="text" required placeholder="mail@example.ru"></label>
+      <label class="field"><span>Пароль</span><input type="password" required placeholder="••••••••"></label>
+      <div class="auth__row"><label class="check"><input type="checkbox" checked> <span>Запомнить меня</span></label><a href="#" data-toast="Восстановление пароля — в разработке">Забыли пароль?</a></div>
+      <button class="btn btn--primary btn--block" type="submit">Войти</button>
+    </form>
+    <form class="auth" data-pane="register" hidden>
+      <label class="field"><span>Имя</span><input type="text" required placeholder="Иван"></label>
+      <label class="field"><span>E-mail</span><input type="email" required placeholder="mail@example.ru"></label>
+      <label class="field"><span>Пароль</span><input type="password" required placeholder="Минимум 8 символов"></label>
+      <button class="btn btn--primary btn--block" type="submit">Создать аккаунт</button>
+    </form>
+    <p class="muted modal__note">Демо-версия: личный кабинет подключается вместе с бэкендом. Данные никуда не отправляются.</p>
   </div>
 </div>
+
+<!-- Search overlay -->
+<div class="modal modal--top" id="searchModal" role="dialog" aria-modal="true" aria-label="Поиск">
+  <div class="modal__box modal__box--wide">
+    <div class="search-field">
+      <svg class="i"><use href="#i-search"/></svg>
+      <input type="search" id="searchInput" placeholder="Например: стельки, Невидимка, бронепанель" autocomplete="off">
+      <button class="icon-btn" data-close aria-label="Закрыть"><svg class="i"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<!-- Video modal -->
+<div class="modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Видео">
+  <div class="modal__box modal__box--media">
+    <button class="icon-btn modal__close" data-close aria-label="Закрыть"><svg class="i"><use href="#i-x"/></svg></button>
+    <img data-src="https://baltactics.ru/lib/video/protection_vest.gif" alt="Противоосколочная защита в использовании" id="videoImg">
+  </div>
+</div>
+
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
@@ -396,13 +549,9 @@
     <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
     <symbol id="i-plus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M12 5v14M5 12h14"/></symbol>
     <symbol id="i-minus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M5 12h14"/></symbol>
-    <symbol id="i-tg" viewBox="0 0 24 24"><path fill="currentColor" d="M21.4 4.3 2.9 11.4c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.5zM9.6 14.2l8.7-5.5c.4-.3.8-.1.5.2l-7.2 6.5-.3 3.3z"/></symbol>
-    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.2 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2zm0 17.8a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.2s.2-1.1.1-1.2c0-.1-.2-.2-.5-.3z"/></symbol>
-    <symbol id="i-yt" viewBox="0 0 24 24"><path fill="currentColor" d="M22.5 7.2a2.8 2.8 0 0 0-2-2C18.7 4.7 12 4.7 12 4.7s-6.7 0-8.5.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1 12a29 29 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2c1.8.5 8.5.5 8.5.5s6.7 0 8.5-.5a2.8 2.8 0 0 0 2-2A29 29 0 0 0 23 12a29 29 0 0 0-.5-4.8zM9.8 15V9l5.7 3z"/></symbol>
-    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z"/></symbol>
-    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
   </defs>
 </svg>
+
 <script src="assets/js/main.js"></script>
 </body>
 </html>
