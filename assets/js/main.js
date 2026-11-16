@@ -78,7 +78,7 @@
     if (e.key === 'Escape') { close(); closeMega(); }
     if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); open($('#searchModal')); }
   });
-  $$('[data-modal]').forEach(function (b) { b.addEventListener('click', function () { open($('#' + b.dataset.modal)); }); });
+  $$('[data-modal]').forEach(function (b) { b.addEventListener('click', function (e) { e.preventDefault(); open($('#' + b.dataset.modal)); }); });
 
   $('#accountOpen').addEventListener('click', function () { open($('#accountModal')); });
   $('#cartOpen').addEventListener('click', function () { renderCart(); open($('#cartDrawer')); });
@@ -159,9 +159,9 @@
       ? '<button class="add-btn' + (inCart(p.id) ? ' is-added' : '') + '" data-add="' + p.id + '"><svg class="i"><use href="#i-' + (inCart(p.id) ? 'cart' : 'plus') + '"/></svg>' + (inCart(p.id) ? 'В корзине' : 'В корзину') + '</button>'
       : '<a class="add-btn" href="https://wa.me/79951138708?text=' + encodeURIComponent('Здравствуйте! Интересует: ' + p.title) + '" target="_blank" rel="noopener">Узнать цену</a>';
     return '<article class="product" style="animation-delay:' + (i * 40) + 'ms">' +
-      '<div class="product__media">' + (p.tag ? '<span class="product__tag">' + p.tag + '</span>' : '') +
+      '<div class="product__media" data-view="' + p.id + '" role="button" tabindex="0" aria-label="Подробнее: ' + esc(p.title) + '">' + (p.tag ? '<span class="product__tag">' + p.tag + '</span>' : '') +
       imgTag(p, p.cover ? 'is-cover' : '') + '</div>' +
-      '<div class="product__body"><h3 class="product__title">' + esc(p.title) + '</h3>' +
+      '<div class="product__body"><h3 class="product__title" data-view="' + p.id + '">' + esc(p.title) + '</h3>' +
       '<p class="product__meta">' + esc(p.meta || '') + '</p>' + (sw ? '<div class="swatches">' + sw + '</div>' : '') +
       '<div class="product__foot">' + priceHtml + btn + '</div></div></article>';
   }
@@ -195,6 +195,7 @@
     cart[key] = (cart[key] || 0) + (qty || 1); saveCart(); toast('«' + byId[id].title + '» в корзине');
     $$('.add-btn[data-add="' + id + '"]').forEach(function (b) { b.classList.add('is-added'); b.innerHTML = '<svg class="i"><use href="#i-cart"/></svg>В корзине'; });
   }
+  function waLink(text) { return 'https://wa.me/79951138708?text=' + encodeURIComponent(text); }
   function requestAdd(id) {
     var p = byId[id];
     if (needsOptions(p)) { openOptions(p); return; }
@@ -212,11 +213,12 @@
   function renderOptions() {
     var p = opt.p, box = $('#optBody');
     box.innerHTML =
-      '<div class="opt__head"><div class="opt__img">' + imgTag(p, p.cover ? 'is-cover' : '') + '</div><div><h3 class="h4">' + esc(p.title) + '</h3><div class="opt__price">' + fmt(p.price) + '</div></div></div>' +
+      '<div class="opt__head"><div class="opt__img">' + imgTag(p, p.cover ? 'is-cover' : '') + '</div><div><h3 class="h4">' + esc(p.title) + '</h3><div class="opt__price">' + (p.price ? fmt(p.price) : 'Цена по запросу') + '</div>' + (p.meta ? '<p class="opt__meta">' + esc(p.meta) + '</p>' : '') + '</div></div>' +
       (p.colors && p.colors.length ? '<div class="opt__group"><div class="opt__label">Цвет: <b>' + esc(opt.color || '—') + '</b></div><div class="chips">' + chips('color', p.colors, opt.color, true) + '</div></div>' : '') +
       (p.sizes && p.sizes.length ? '<div class="opt__group"><div class="opt__label">Размер: <b>' + esc(opt.size || 'не выбран') + '</b></div><div class="chips">' + chips('size', p.sizes, opt.size, false) + '</div></div>' : '') +
+      (!p.price ? '<div class="opt__foot"><a class="btn btn--primary btn--block" target="_blank" rel="noopener" href="' + waLink('Здравствуйте! Интересует: ' + p.title + (opt.color ? ', цвет ' + opt.color : '') + (opt.size ? ', размер ' + opt.size : '') + '. Подскажите цену.') + '">Узнать цену в WhatsApp</a></div>' :
       '<div class="opt__foot"><div class="qty qty--lg"><button type="button" data-oq="-1" aria-label="Меньше"><svg class="i"><use href="#i-minus"/></svg></button><span>' + opt.qty + '</span><button type="button" data-oq="1" aria-label="Больше"><svg class="i"><use href="#i-plus"/></svg></button></div>' +
-      '<button type="button" class="btn btn--primary" id="optAdd">В корзину · ' + fmt(p.price * opt.qty) + '</button></div>';
+      '<button type="button" class="btn btn--primary" id="optAdd">В корзину · ' + fmt(p.price * opt.qty) + '</button></div>');
   }
   function openOptions(p) {
     opt = { p: p, color: p.colors && p.colors.length === 1 ? p.colors[0] : '', size: p.sizes && p.sizes.length === 1 ? p.sizes[0] : '', qty: 1 };
@@ -252,16 +254,60 @@
     $('#cartTotal').textContent = fmt(total);
     $('#checkout').disabled = !ids.length; $('#checkout').style.opacity = ids.length ? 1 : .5;
   }
-  $('#checkout').addEventListener('click', function () { close(); toast('Оформление заказа будет подключено в рабочей версии'); });
 
   /* Делегирование кликов */
   document.addEventListener('click', function (e) {
-    var t = e.target.closest('[data-add],[data-inc],[data-dec],[data-rm]'); if (!t) return;
+    var t = e.target.closest('[data-add],[data-view],[data-inc],[data-dec],[data-rm]'); if (!t) return;
     var d = t.dataset;
     if (d.add) { requestAdd(d.add); }
+    else if (d.view) { openOptions(byId[d.view]); }
     else if (d.inc) { cart[d.inc]++; saveCart(); renderCart(); }
     else if (d.dec) { if (--cart[d.dec] <= 0) delete cart[d.dec]; saveCart(); renderCart(); renderGrid(); }
     else if (d.rm) { delete cart[d.rm]; saveCart(); renderCart(); renderGrid(); }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    var v = e.target.closest && e.target.closest('[data-view]');
+    if (v && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openOptions(byId[v.dataset.view]); }
+  });
+
+  /* ---------- Оформление заказа ---------- */
+  function cartLines() {
+    var total = 0, lines = Object.keys(cart).map(function (key) {
+      var parts = key.split('|'), p = byId[parts[0]]; if (!p) return null;
+      total += p.price * cart[key];
+      var vars = [parts[1], parts[2] ? 'р. ' + parts[2] : ''].filter(Boolean).join(', ');
+      return { text: p.title + (vars ? ' (' + vars + ')' : '') + ' × ' + cart[key], sum: p.price * cart[key] };
+    }).filter(Boolean);
+    return { lines: lines, total: total };
+  }
+  $('#checkout').addEventListener('click', function () {
+    var c = cartLines(); if (!c.lines.length) return;
+    $('#orderSum').innerHTML = c.lines.map(function (l) { return '<div><span>' + esc(l.text) + '</span><span>' + fmt(l.sum) + '</span></div>'; }).join('') +
+      '<div class="order-sum__total"><span>Итого</span><b>' + fmt(c.total) + '</b></div>';
+    open($('#orderModal'));
+  });
+  function validate(form) {
+    var ok = true;
+    $$('input[required]', form).forEach(function (i) {
+      var bad = i.type === 'checkbox' ? !i.checked : !i.value.trim() || (i.type === 'tel' && i.value.replace(/\D/g, '').length < 10);
+      i.classList.toggle('is-error', bad); if (bad) ok = false;
+    });
+    if (!ok) toast('Проверьте обязательные поля');
+    return ok;
+  }
+  var via = 'wa';
+  $$('#orderForm [data-via]').forEach(function (b) { b.addEventListener('click', function () { via = b.dataset.via; }); });
+  $('#orderForm').addEventListener('submit', function (e) {
+    e.preventDefault(); if (!validate(this)) return;
+    var f = this.elements, c = cartLines();
+    var text = 'Заказ с сайта БалТактика\n\n' + c.lines.map(function (l, i) { return (i + 1) + '. ' + l.text + ' — ' + fmt(l.sum); }).join('\n') +
+      '\n\nИтого: ' + fmt(c.total) + '\n\nИмя: ' + f.name.value.trim() + '\nТелефон: ' + f.phone.value.trim() +
+      (f.addr.value.trim() ? '\nДоставка: ' + f.addr.value.trim() : '') + (f.msg.value.trim() ? '\nКомментарий: ' + f.msg.value.trim() : '');
+    var url = via === 'mail' ? 'mailto:micasawar@mail.ru?subject=' + encodeURIComponent('Заказ с сайта') + '&body=' + encodeURIComponent(text) : waLink(text);
+    window.open(url, '_blank', 'noopener');
+    cart = {}; saveCart(); renderGrid(); close(); this.reset();
+    toast('Заказ сформирован — отправьте сообщение менеджеру');
   });
 
   /* ---------- Поиск ---------- */
@@ -278,18 +324,16 @@
 
   /* ---------- Форма обратной связи ---------- */
   $('#feedback').addEventListener('submit', function (e) {
-    e.preventDefault();
-    var ok = true;
-    $$('input[required]', this).forEach(function (i) {
-      var bad = i.type === 'checkbox' ? !i.checked : !i.value.trim();
-      i.classList.toggle('is-error', bad); if (bad) ok = false;
-    });
-    if (!ok) { toast('Заполните обязательные поля'); return; }
-    this.reset(); toast('Спасибо! Мы свяжемся с вами в ближайшее время');
+    e.preventDefault(); if (!validate(this)) return;
+    var f = this.elements;
+    var text = 'Заявка с сайта БалТактика\nИмя: ' + f.name.value.trim() + '\nТелефон: ' + f.phone.value.trim() +
+      (f.email.value.trim() ? '\nE-mail: ' + f.email.value.trim() : '') + (f.msg.value.trim() ? '\n\n' + f.msg.value.trim() : '');
+    window.open(waLink(text), '_blank', 'noopener');
+    this.reset(); toast('Сообщение подготовлено в WhatsApp');
   });
 
   /* ---------- Появление при скролле ---------- */
-  var revealEls = $$('.section__head, .cats, .tech, .about__content, .reviews, .coop, .contacts > *, .features__grid');
+  var revealEls = $$('.section__head, .cats, .tech, .about__content, .reviews, .coop-grid, .docs, .contacts > *, .features__grid');
   revealEls.forEach(function (el) { el.classList.add('reveal'); });
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (es) {
